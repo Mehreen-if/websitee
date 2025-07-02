@@ -6,15 +6,44 @@ import Footer from './Footer'
 import Contact from './Contact'
 import Cards from './Cards'
 
-import { products } from "./data";
 import ProductCard from "./components/ProductCard";
 import CartDrawer from "./components/CartDrawer";
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  const products = [
+    {
+      id: 1,
+      name: "Gold Necklace",
+      image: "/necklace 1.jpg",
+      price: 2999,
+      discountPrice: 2499
+    },
+    {
+      id: 2,
+      name: "Silver Necklace",
+      image: "/necklace 2.jpg",
+      price: 4999,
+      discountPrice: 3999
+    },
 
-   const [cartItems, setCartItems] = useState([]);
+    {
+      id: 3,
+      name: "Diamond Necklace",
+      image: "/necklace 3.jpg",
+      price: 7999,
+      discountPrice: 6999
+    },
+    {
+      id: 4,
+      name: "Pearl Nacklace",
+      image: "/necklace 4.jpg",
+      price: 1999,
+      discountPrice: 1499
+    }
+  ];
+
+  const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setCartOpen] = useState(false);
 
   const handleAddToCart = (product) => {
@@ -38,22 +67,22 @@ function App() {
 
 
       <div className="app">
-      <h1 className='text-white'>Jewellery Store</h1>
+        <h1 className='text-white'>Jewellery Store</h1>
 
-      <div className="grid-container">
-        {products.map((item) => (
-          <ProductCard
-            key={item.id}
-            product={item}
-            onAddToCart={handleAddToCart}
-          />
-        ))}
+        <div className="grid-container">
+          {products.map((item) => (
+            <ProductCard
+              key={item.id}
+              product={item}
+              onAddToCart={handleAddToCart}
+            />
+          ))}
+        </div>
+
+        {isCartOpen && (
+          <CartDrawer cartItems={cartItems} onClose={() => setCartOpen(false)} />
+        )}
       </div>
-
-      {isCartOpen && (
-        <CartDrawer cartItems={cartItems} onClose={() => setCartOpen(false)} />
-      )}
-    </div>
 
       <Contact />
       <Footer />
