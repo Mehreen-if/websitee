@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(0deg,rgba(79, 77, 77, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  align-items: center;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.Footer{
+    text-align: center;
+    color: white;
+}
+
+.container {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+
+
+
+.app {
+  padding: 20px;
+}
+
+.grid-container {
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s;
+  margin-top: 20px;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.add-btn {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  background: #222;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.image-container:hover .add-btn {
+  display: block;
+}
+
+.cart-drawer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #f7f7f7;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.cart-item {
+  display: flex;
+  height: 60px;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+
+
